@@ -1,0 +1,41 @@
+--- 
+title: "A. The First Notebook"
+author:
+- name: Firstname Lastname
+  affiliation: School, City, State, Country
+- name: Another Author
+  affiliation: School, City, State, Country
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_document:
+        toc: true
+        toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Notebook_1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+Some information
+
+# Installation
+
+Install packages:
+
+```{r install, eval = FALSE}
+if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(ask = FALSE)                   # update existing packages
+
+BiocManager::install("Bioconductor/AnVIL")          # install the development version of the AnVIL package
+```

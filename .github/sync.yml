@@ -1,0 +1,21 @@
+# For info on how to update this file see: https://github.com/marketplace/actions/repo-file-sync-action#%EF%B8%8F-sync-configuration
+
+group:
+  - files:
+      - source: assets/
+        dest: assets/
+        deleteOrphaned: true
+      - source: _output.yml
+        dest: _output.yml
+      - source: .github/workflows/pull_request.yml
+        dest: .github/workflows/pull_request.yml
+      - source: scripts/anvil_repo_check.R
+        dest: scripts/anvil_repo_check.R
+      - source: scripts/anvil_repo_table.R
+        dest: scripts/anvil_repo_table.R
+  # Repositories to receive changes
+    repos: |
+      jhudsl/AnVIL_Book_Getting_Started
+      jhudsl/AnVIL_Book_Instructor_Guide
+      jhudsl/AnVIL_Book_WDL
+###ADD NEW REPO HERE following the format above#
