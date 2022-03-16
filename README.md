@@ -2,7 +2,7 @@
 
 ## AnVIL Template
 
-Based on [_Online Tools for Training Resources (OTTR)_](https://github.com/jhudsl/OTTR_Template)
+Based on [_Open-source Tools for Training Resources (OTTR)_](https://github.com/jhudsl/OTTR_Template)
 
 The purpose of this template and is to make publishing maintenance for AnVIL content across multiple different platforms _less painful_.
 
