@@ -1,0 +1,40 @@
+
+```{r, include = FALSE}
+ottpal::set_knitr_image_path()
+```
+
+# Overview and Learning Objectives
+
+## Activity Context
+
+**Course Audience**  
+
+- Graduate Students in Biological Sciences or related fields
+
+**Course Prerequisites**  
+
+- Layman understanding of genetics (understanding of DNA, genes, trait inheritance)
+- Some previous exposure to the central dogma of molecular biology
+
+**Class Type**  
+
+- Lab
+- Computer-based
+
+**Class Size**  
+
+- 1-50
+
+**Lesson Duration**  
+
+**Assessment Type**  
+
+## Learning Objectives
+
+Learning objectives for this activity come from the [Genetics Core Competencies](https://genetics-gsa.org/education/genetics-learning-framework/):
+
+<!-- - Gather and evaluate experimental evidence, including qualitative and quantitative data -->
+<!-- - Generate and interpret graphs displaying experimental results -->
+<!-- - Critique large data sets and use bioinformatics to assess genetics data -->
+<!-- - Tap into the interdisciplinary nature of science -->
+
