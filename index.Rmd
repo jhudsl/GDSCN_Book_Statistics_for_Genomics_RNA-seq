@@ -1,5 +1,5 @@
 ---
-title: "AnVIL Book Name"
+title: "GDSCN: Statistics for Genomics - RNAseq"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -18,6 +18,8 @@ This book is part of a series of books for the Genomic Data Science Analysis, Vi
 ## AnVIL Collection {-}
 
 Please check out our full collection of AnVIL resources below!
+
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 source("scripts/anvil_repo_table.R")
