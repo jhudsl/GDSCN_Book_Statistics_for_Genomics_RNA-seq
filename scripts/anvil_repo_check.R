@@ -25,7 +25,7 @@ message(paste("Checking for AnVIL repositories..."))
 # Request search results specific to AnVIL within the jhudsl organization
 # and provide the appropriate GH token
 req <- httr::GET(
-  "https://api.github.com/search/repositories?q=AnVIL+user:jhudsl",
+  "https://api.github.com/search/repositories?q=GDSCN+user:jhudsl+OR+AnVIL+user:jhudsl",
   httr::add_headers(Authorization = paste("token", git_pat))
 )
 

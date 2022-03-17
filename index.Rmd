@@ -28,7 +28,8 @@ source("scripts/anvil_repo_table.R")
 exclude = c(
   "anvil-intro",
   "AnVIL_Template",
-  "AnVIL_Template_Test"
+  "AnVIL_Template_Test",
+  "GDSCN_bookdown_style"
 )
 
 # Create table for AnVIL repos detected through the API
