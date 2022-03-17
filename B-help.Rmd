@@ -1,4 +1,6 @@
-# (APPENDIX) Help {-}
+# (APPENDIX) Appendix {-}
+
+# Help
 
 We welcome any and all questions at our [Discourse Channel](https://help.anvilproject.org/).
 
