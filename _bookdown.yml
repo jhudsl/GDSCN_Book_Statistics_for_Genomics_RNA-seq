@@ -1,9 +1,10 @@
-book_filename: "Course_Name"
+book_filename: "GDSCN: Statistics for Genomics - RNA-seq"
 chapter_name: "Chapter "
-repo: https://github.com/jhudsl/OTTR_Template/
+repo: https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq
 rmd_files: ["index.Rmd",
             "01-overview.Rmd",
-            "03-lesson-plan.Rmd",
+            "02-lesson-plan.Rmd",
+            "03-data.Rmd",
             "B-help.Rmd",
             "C-feedback.Rmd",
             "About.Rmd"]
