@@ -8,7 +8,7 @@ We will use the Bioconductor package [`GEOquery`](https://bioconductor.org/packa
 
 First, install `GEOquery` and load the library using the following code. if you are asked to update packages, you can type 'n' for 'no'.
 
-```{r, warning - FALSE, message = FALSE}
+```{r, warning = FALSE, message = FALSE}
 BiocManager::install("GEOquery")
 library(GEOquery)
 ```
@@ -25,19 +25,19 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/182AOzMaiyrreinns
 
 Next, we will use the `getGEO()` function to locate the right Series record for this experiment. 
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 gse <- getGEO("GSE162176")
 ```
 
 When we perform this function on a `gse` accession, a list of objects called `ExpressionSet` objects is returned. In our case, there is only one ExpressionSet, so we can select if from the list using brackets.
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 exp_set <- gse[[1]]
 ```
 
 We can then look at the experiment metadata using `pData()`.
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 # Extract phenotypic data
 pheno_data <- pData(exp_set)
 ```
