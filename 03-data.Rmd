@@ -8,7 +8,7 @@ We will use the Bioconductor package [`GEOquery`](https://bioconductor.org/packa
 
 First, install `GEOquery` and load the library using the following code. if you are asked to update packages, you can type 'n' for 'no'.
 
-```{r}
+```{r, warning - FALSE, message = FALSE}
 BiocManager::install("GEOquery")
 library(GEOquery)
 ```
