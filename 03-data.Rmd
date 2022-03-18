@@ -1,3 +1,51 @@
 # Data Exploration
 
-## 
+## About the Data
+
+## Using `GEOquery`
+
+We will use the Bioconductor package [`GEOquery`](https://bioconductor.org/packages/release/bioc/html/GEOquery.html) to load our data. The NCBI Gene Expression Omnibus (GEO) is a public repository of gene expression data. `GEOquery` allows us to get this data programmatically without having to download anything manually. This ensures anyone following in our footsteps can follow what we did exactly.
+
+First, install `GEOquery` and load the library using the following code. if you are asked to update packages, you can type 'n' for 'no'.
+
+```{r}
+BiocManager::install("GEOquery")
+library(GEOquery)
+```
+
+In GEO, there are [several different record types](https://www.ncbi.nlm.nih.gov/geo/info/overview.html). The most straightforward is a 'Sample' record. A Sample record describes the conditions under which an individual Sample was handled, the manipulations it underwent, and the abundance measurement of each element derived from it. Each Sample record is assigned a unique and stable GEO accession number (GSMxxx). A Sample entity may be included in multiple 'Series'. 
+
+a 'Series' record defines a set of related Samples considered to be part of a group. This record describes how the Samples are related and provides information about the experiment. Series records may also contain tables describing extracted data, summary conclusions, or analyses. Each Series record is assigned a unique and stable GEO accession number (GSExxx).
+
+First, we should locate the correct 'Series' number for this experiment.
+
+```{r, echo=FALSE, fig.alt='Screenshot of the accession page.'}
+ottrpal::include_slide("https://docs.google.com/presentation/d/182AOzMaiyrreinnsRX2VhH7YsVgvAp4xtIB_7Mzmk6I/edit#slide=id.gf243efded1_0_134")
+```
+
+Next, we will use the `getGEO()` function to locate the right Series record for this experiment. 
+
+```{r}
+gse <- getGEO("GSE162176")
+```
+
+When we perform this function on a `gse` accession, a list of objects called `ExpressionSet` objects is returned. In our case, there is only one ExpressionSet, so we can select if from the list using brackets.
+
+```{r}
+exp_set <- gse[[1]]
+```
+
+We can then look at the experiment metadata using `pData()`.
+
+```{r}
+# Extract phenotypic data
+pheno_data <- pData(exp_set)
+```
+
+```{r, eval=FALSE}
+View(pheno_data)
+```
+
+```{r, echo=FALSE}
+print(pheno_data[1:5,1:6])
+```
