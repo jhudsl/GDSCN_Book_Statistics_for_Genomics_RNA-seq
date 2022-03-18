@@ -2,5 +2,7 @@ overview-and-learning-objectives
 activity-context
 learning-objectives
 lesson-plan
+data-exploration
+section
 help
 give-us-feedback

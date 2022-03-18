@@ -1,6 +1,6 @@
 ---
 title: "GDSCN: Statistics for Genomics - RNAseq"
-date: "March 17, 2022"
+date: "March 18, 2022"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: book.bib
