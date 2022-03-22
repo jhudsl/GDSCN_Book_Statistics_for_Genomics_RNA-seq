@@ -4,7 +4,8 @@ repo: https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq
 rmd_files: ["index.Rmd",
             "01-overview.Rmd",
             "02-lesson-plan.Rmd",
-            "03-data.Rmd",
+            "03-setup.Rmd",
+            "04-data.Rmd",
             "B-help.Rmd",
             "C-feedback.Rmd",
             "About.Rmd"]
