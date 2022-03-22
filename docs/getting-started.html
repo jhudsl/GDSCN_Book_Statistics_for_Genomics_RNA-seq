@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B Give Us Feedback | GDSCN: Statistics for Genomics - RNAseq</title>
+  <title>Chapter 3 Getting Started | GDSCN: Statistics for Genomics - RNAseq</title>
   <meta name="description" content="Description about Course/Book." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B Give Us Feedback | GDSCN: Statistics for Genomics - RNAseq" />
+  <meta property="og:title" content="Chapter 3 Getting Started | GDSCN: Statistics for Genomics - RNAseq" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B Give Us Feedback | GDSCN: Statistics for Genomics - RNAseq" />
+  <meta name="twitter:title" content="Chapter 3 Getting Started | GDSCN: Statistics for Genomics - RNAseq" />
   
   <meta name="twitter:description" content="Description about Course/Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/anvil_favicon.ico" type="image/x-icon" />
-<link rel="prev" href="help.html"/>
-<link rel="next" href="about-the-authors.html"/>
+<link rel="prev" href="lesson-plan.html"/>
+<link rel="next" href="data-exploration.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -200,18 +200,36 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/dasl_thin_main_image.png">
 </div>
-<div id="give-us-feedback" class="section level1" number="6">
-<h1><span class="header-section-number">B</span> Give Us Feedback</h1>
-<p>Thank you for your interest in this book! There are a few ways you can suggest improvements:</p>
-<p><br>
-<!-- The capital letter above alters the formatting for the numbered points below --></p>
-<ol style="list-style-type: decimal">
-<li>Fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzzSVPIxyTlCSO0gNjUIAwcZRiOISylIIiQOylatwuaCf00Q/viewform?usp=sf_link" target="_blank">Google form</a>.</li>
-<li>If you have a GitHub account, you can <a href="https://github.com/jhudsl/GDSCN_Book_SARS_Galaxy_on_AnVIL/issues/new" target="_blank">raise an issue</a> in our repository.</li>
-<li>Submit a pull request! Click the pencil icon on any page (top left) to view the source <code>.Rmd</code> for the page and suggest changes.</li>
-</ol>
+<div id="getting-started" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Getting Started</h1>
+<div id="introduction" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction</h2>
+<p>This chapter explains how to get set up to do your analyses on <a href="https://anvilproject.org/">AnVIL</a>. All activities will be run using <a href="https://www.rstudio.com/">RStudio</a>, so if you choose, you can use a different RStudio interface (such as <a href="https://rstudio.cloud/">RStudio Cloud</a> or locally installed RStudio).</p>
+<p>The Analysis, Visualization, and Informatics Lab-space (<a href="https://anvilproject.org/">AnVIL</a>) is a scalable and interoperable computing resource for the genomics scientific community. AnVIL enables researchers to analyze high-value open and controlled access genomic datasets with popular analysis tools in a secure cloud computing environment. AnVIL also serves as a data commons. It runs on the Google Cloud Platform (GCP) and is sponsored by <a href="https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL">NHGRI</a>.</p>
+<p>In addition to Docker-based analysis workflows, AnVIL supports popular interactive analysis tools such as Jupyter notebooks, Bioconductor, RStudio, and Galaxy.</p>
+<p>By operating in the cloud, AnVIL users can scale analyses from a single computer to thousands and securely share data, workflows, and reproducible results with collaborators and colleagues.</p>
+</div>
+<div id="step-1-create-a-google-account" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Step 1: Create a Google Account</h2>
+<p>AnVIL uses <a href="https://anvil.terra.bio/">Terra</a> to run analyses. Terra operates on Google Cloud Platform, so you’ll need a Google account to make sure your instructor can keep track of any computing costs you accrue.</p>
+<p>If you do not already have a Google account that you would like to use for accessing Terra, <a href="https://accounts.google.com/SignUp">create one now</a>. Otherwise, please use a Gmail account you have already set up.</p>
+<p>If you would like to create a Google account that is associated with your non-Gmail, institutional email address, follow <a href="https://support.terra.bio/hc/en-us/articles/360029186611">these instructions</a>.</p>
+</div>
+<div id="step-2-sign-in-to-terra" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Step 2: Sign in to Terra</h2>
+<p>You need to sign into Terra with your Google account to allow your instructor to add you to projects and/or Workspaces associated with your specific class. This is the only way you can launch applications and perform computations on AnVIL. <a href="https://anvil.terra.bio/">Launch Terra</a>, and you should be prompted to sign in with your Google account.</p>
+<p>You can always access Terra by going to <a href="https://anvil.terra.bio/"><code>anvil.terra.bio</code></a>, or by clicking the link on the AnVIL home page.</p>
+<p><img src="03-setup_files/figure-html/1tyt8ifxD3y7QW3nN27jh02aPrBvNEo1GN_u2Ne_UngM_gde7783227e_0_31.png" title="Screenshot of the AnVIL home page. The button to &quot;launch Terra&quot; is highlighted." alt="Screenshot of the AnVIL home page. The button to &quot;launch Terra&quot; is highlighted." width="480" /></p>
+</div>
+<div id="step-3-share-your-id" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Step 3: Share your ID</h2>
+<p>It is <em>very important</em> that you share the Google account you used above with your instructor! Otherwise, they cannot add you to class projects or Workspaces.</p>
 
 </div>
+</div>
+
+
+
 <hr>
 <center> 
   <div class="footer">
@@ -225,8 +243,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="help.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lesson-plan.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-exploration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -257,7 +275,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq/edit/main/C-feedback.Rmd",
+"link": "https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq/edit/main/03-setup.Rmd",
 "text": "Edit"
 },
 "history": {
