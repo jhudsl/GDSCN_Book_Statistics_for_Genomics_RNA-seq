@@ -3,6 +3,10 @@ activity-context
 learning-objectives
 lesson-plan
 data-exploration
-section
+about-the-data
+using-geoquery
+geoquery-record-types
+kabuki-dataset-metadata
+recap
 help
 give-us-feedback
