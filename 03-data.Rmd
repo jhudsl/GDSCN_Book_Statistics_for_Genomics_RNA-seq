@@ -16,7 +16,9 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQAg
 
 ## Using `GEOquery`
 
-The [NCBI Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) is an international public repository that archives and freely distributes microarray, next-generation sequencing, and other forms of high-throughput functional genomics data submitted by the research community. We will use the Bioconductor package [`GEOquery`](https://bioconductor.org/packages/release/bioc/html/GEOquery.html) to load data from GEO. Using `GEOquery` is convenient because it allows us to get the data programmatically without having to download anything manually. This ensures anyone following in our footsteps can follow what we did exactly.
+The [NCBI Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) is an international public repository that archives and freely distributes microarray, next-generation sequencing, and other forms of high-throughput functional genomics data submitted by the research community. We will use the Bioconductor package [`GEOquery`](https://bioconductor.org/packages/release/bioc/html/GEOquery.html) to load data from GEO. 
+
+Using `GEOquery` is convenient because it allows us to get the data programmatically without having to download anything manually. This ensures anyone following in our footsteps can follow what we did exactly.
 
 First, install `GEOquery` and load the library using the following code. if you are asked to update packages, you can type 'n' for 'no'.
 
@@ -65,12 +67,15 @@ names(pheno_data)
 View the data to see which Samples are contained in this ExpressionSet.
 
 ```{r, eval=FALSE}
+# Explore the metadata
 View(pheno_data)
 ```
 
 ```{r, echo=FALSE}
 print(pheno_data[1:5,1:6])
 ```
+
+## Recap
 
 :::{.fyi}
 QUESTION:
