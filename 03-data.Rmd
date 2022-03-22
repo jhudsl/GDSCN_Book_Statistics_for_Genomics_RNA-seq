@@ -2,6 +2,18 @@
 
 ## About the Data
 
+Mendelian disorders of the epigenetic machinery (MDEMs) are a relatively new group of multiple congenital anomaly and intellectual disability syndromes. These disorders result from mutations in genes responsible for epigenetic machinery. In other words, genes responsible for controlling the [epigenome](https://youtu.be/_aAhcNjmvhc) lose their normal function.
+
+Despite having different causative genes, these disorders share similarities in disease presentation. This physical similarity, or phenotypic convergence, could be due to these mutations causing similar effects at the epigenomic level. Such epigenetic changes then lead to similarities gene expression.
+
+Scientists at Johns Hopkins designed an experiment to identify abnormalities shared across multiple MDEMs, in order to causally relate epipgentic variation to disease phenotypes. As part of this experiment, scientists examined gene expression (RNA-Seq) states from mouse models of three MDEMs (Kabuki types 1&2 and Rubinstein-Taybi syndromes).
+
+You can find out more about this experiment [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE162176).
+
+```{r, echo=FALSE, fig.alt='Cartoon of epigenetic machinery, including a writer, reader, and eraser interacting with a histone. The histones, nucleosomes, and chromatin are all depicted as coiling into a chromosome.'}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc/edit#slide=id.g11e8aba06f7_0_6")
+```
+
 ## Using `GEOquery`
 
 The [NCBI Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) is an international public repository that archives and freely distributes microarray, next-generation sequencing, and other forms of high-throughput functional genomics data submitted by the research community. We will use the Bioconductor package [`GEOquery`](https://bioconductor.org/packages/release/bioc/html/GEOquery.html) to load data from GEO. Using `GEOquery` is convenient because it allows us to get the data programmatically without having to download anything manually. This ensures anyone following in our footsteps can follow what we did exactly.
