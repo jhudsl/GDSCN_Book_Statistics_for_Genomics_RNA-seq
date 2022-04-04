@@ -4,6 +4,7 @@ Bloomberg
 Datatrail
 DataTrail
 dropdown
+ENSMUSG
 epigenetic
 epigenetic
 epigenome
@@ -11,7 +12,9 @@ epigenomic
 ExpressionSet
 GCP
 GDSCN
+GENCODE
 Gmail
+GSE
 GSExxx
 GSMxxx
 impactful
@@ -19,6 +22,7 @@ interoperable
 ITCR
 itcrtraining
 ITN
+iSEE
 Jupyter
 fyi
 Leanpub
@@ -26,13 +30,18 @@ Markua
 MDEMs
 mentorship
 NCI
+nf
 NHGRI
 phenotypes
 preprint
 programmatically
 RNAseq
+rnaseq
 RStudio
 scalable
+SingleCellExperiment
+SRX
+SummarizedExperiment
 Taybi
 UE
 UE5
