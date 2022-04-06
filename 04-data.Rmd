@@ -77,12 +77,81 @@ View(pheno_data)
 print(pheno_data[1:5,1:6])
 ```
 
-## Recap
+The GEO record provides information about each of the samples (aka "metadata").  You can use the `table()` function to tabulate how many samples there are for each of the three disease states (along with their corresponding wild type controls).
 
-:::{.fyi}
-QUESTION:
+```{r}
+table( pheno_data$`disease state:ch1` )
+```
 
-Explore the metadata. What was the cell type (`cell type:ch1`) used in this experiment?
+::: {.fyi}
+QUESTIONS:
+
+1. What was the cell type (`cell type:ch1`) used in this experiment?
+2. Which column contains information about the ages?
+3. Which age has the most samples?
+:::
+
+## Pull in counts
+
+Retrieving GSE162176 using `getGEO()` currently does not obtain RNA-seq expression data.  We have cached a `SummarizedExperiment` object in the [GDSCN datasets](https://anvil.terra.bio/#workspaces/gdscn-exercises/datasets) Workspace.  This object contains metadata, counts, and abundance information as produced by the [nf-co.re/rnaseq/3.6](https://nf-co.re/rnaseq/3.6) pipeline using the [GENCODE M23](https://www.gencodegenes.org/mouse/release_M23.html) annotation.
+
+```{r, echo=FALSE, fig.alt='Screenshot of the GDSCN datasets Workspace showing the cached GSE162176.rds dataset.'}
+ottrpal::include_slide( "https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc/edit#slide=id.g12145d7e666_0_0" )
+```
+
+The Bioconductor [AnVIL package](http://bioconductor.org/packages/AnVIL) provides a `gsutil_cp()` function to streamline transfers between AnVIL Workspaces.  Note that the [syntax for accessing Google Cloud Storage resources](https://cloud.google.com/storage/docs/gsutil#syntax) is `gs://BUCKET_NAME/OBJET_NAME`, and that each AnVIL Workspace has an associated bucket.  The following command transfers the `GSE162176.rds` file from the GDSCN datasets Workspace into your Workspace.
+
+```{r, eval=FALSE}
+AnVIL::gsutil_cp( "gs://fc-8529d29f-ac62-4c10-9f01-14f4d7612ae0/GSE162176.rds", "." )
+```
+
+Once you have obtained a copy of the `.rds` file, load it into your environment using the `readRDS()` function.  Note that you will need to install the [SummarizedExperiment](http://bioconductor.org/packages/SummarizedExperiment) package if you have not previously done so.
+
+```{r, eval=FALSE}
+AnVIL::install( "SummarizedExperiment" )
+se <- readRDS( "GSE162176.rds" )
+```
+
+Confirm that you have successfully loaded the data by creating a scatterplot comparing a Kabuki sample and a Wild-type sample.
+
+```{r, eval=FALSE}
+kabuki <- assay(se)[,"SRX9584943"]
+wildtype <- assay(se)[,"SRX9584958"]
+plot( log2(kabuki+1), log2(wildtype+1) )
+```
+
+```{r, echo=FALSE, fig.alt='Screenshot of RStudio with an R Notebook that creates a scatterplot comparing kabuki and wildtype log2 counts.'}
+ottrpal::include_slide( "https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc/edit#slide=id.g12145d7e666_0_9" )
+```
+
+::: {.fyi}
+QUESTIONS:
+
+4. Which SRX accession numbers correspond to Rubinstein-Taybi?
+5. Create a scatterplot comparing a Rubinstein-Taybi sample and a Wild-type sample
+:::
+
+## Explore in iSEE
+
+The Bioconductor [Interactive SummarizedExperiment Explorer (iSEE)](https://bioconductor.org/packages/iSEE) provides an interactive Shiny-based graphical user interface for exploring data stored in SummarizedExperiment objects and it's extensions such as SingleCellExperiment.  One feature that we will use here is the ability to explore what experimental conditions are present in this dataset and how gene expression changes between conditions.
+
+```{r, echo=FALSE, fig.alt='Screenshot of an iSEE session with three panels: 1) Column data table showing sample metadata, 2) Column data plot showing sample titles vs disease, and 3) Feature assay plot showing gene counts across disease states.'}
+ottrpal::include_slide( "https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc/edit#slide=id.g12145d7e666_0_14" )
+```
+
+You can launch an interactive explorer simply by calling the `iSEE()` function with only a SummarizedExperiment object.  However, you can also configure the explorer by passing additional parameters such as the types of panels that you wish to appear.  Here we launch iSEE with panels allowing exploration of the sample metadata as a table, the sample metadata as a plot, and the gene expression data as a plot.  Note that you will need to install the iSEE package if you have not previously done so.
+
+```{r, eval=FALSE}
+AnVIL::install( "iSEE" )
+library( "iSEE" )
+iSEE( se, list( ColumnDataTable(), ColumnDataPlot(), FeatureAssayPlot() ) )
+```
+
+::: {.fyi}
+QUESTIONS:
+
+6. In the "Column data plot" panel, create a plot with age on the y-axis and disease on the x-axis.  Which disease states have the most age diversity?  The least?
+7. In the "Feature assay plot" panel, create a plot with ENSMUSG00000000001.4 on the y-axis and disease on the x-axis.  What conclusions can you make if you plot counts?  Does it change if you plot abundance?
 :::
 
 ```{r}
