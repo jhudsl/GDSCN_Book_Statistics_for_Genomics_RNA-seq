@@ -86,8 +86,9 @@ table( pheno_data$`disease state:ch1` )
 ::: {.fyi}
 QUESTIONS:
 
-1. Which column contains information about the ages?
-2. Which age has the most samples?
+1. What was the cell type (`cell type:ch1`) used in this experiment?
+2. Which column contains information about the ages?
+3. Which age has the most samples?
 :::
 
 ## Pull in counts
@@ -98,7 +99,7 @@ Retrieving GSE162176 using `getGEO()` currently does not obtain RNA-seq expressi
 ottrpal::include_slide( "https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc/edit#slide=id.g12145d7e666_0_0" )
 ```
 
-The Bioconductor [AnVIL package](http://bioconductor.org/packages/AnVIL) provides a `gsutil_cp()` function to streamline transfers between AnVIL Workspaces.  The following command transfers the `GSE162176.rds` file from the GDSCN datasets Workspace into your Workspace.
+The Bioconductor [AnVIL package](http://bioconductor.org/packages/AnVIL) provides a `gsutil_cp()` function to streamline transfers between AnVIL Workspaces.  Note that the [syntax for accessing Google Cloud Storage resources](https://cloud.google.com/storage/docs/gsutil#syntax) is `gs://BUCKET_NAME/OBJET_NAME`, and that each AnVIL Workspace has an associated bucket.  The following command transfers the `GSE162176.rds` file from the GDSCN datasets Workspace into your Workspace.
 
 ```{r, eval=FALSE}
 AnVIL::gsutil_cp( "gs://fc-8529d29f-ac62-4c10-9f01-14f4d7612ae0/GSE162176.rds", "." )
@@ -126,8 +127,8 @@ ottrpal::include_slide( "https://docs.google.com/presentation/d/1Xd-ZdWF-di4RnQA
 ::: {.fyi}
 QUESTIONS:
 
-3. Which SRX accession numbers correspond to Rubinstein-Taybi?
-4. Create a scatterplot comparing a Rubinstein-Taybi sample and a Wild-type sample
+4. Which SRX accession numbers correspond to Rubinstein-Taybi?
+5. Create a scatterplot comparing a Rubinstein-Taybi sample and a Wild-type sample
 :::
 
 ## Explore in iSEE
@@ -149,16 +150,8 @@ iSEE( se, list( ColumnDataTable(), ColumnDataPlot(), FeatureAssayPlot() ) )
 ::: {.fyi}
 QUESTIONS:
 
-5. In the "Column data plot" panel, create a plot with age on the y-axis and disease on the x-axis.  Which disease states have the most age diversity?  The least?
-6. In the "Feature assay plot" panel, create a plot with ENSMUSG00000000001.4 on the y-axis and disease on the x-axis.  What conclusions can you make if you plot counts?  Does it change if you plot abundance?
-:::
-
-## Recap
-
-:::{.fyi}
-QUESTION:
-
-Explore the metadata. What was the cell type (`cell type:ch1`) used in this experiment?
+6. In the "Column data plot" panel, create a plot with age on the y-axis and disease on the x-axis.  Which disease states have the most age diversity?  The least?
+7. In the "Feature assay plot" panel, create a plot with ENSMUSG00000000001.4 on the y-axis and disease on the x-axis.  What conclusions can you make if you plot counts?  Does it change if you plot abundance?
 :::
 
 ```{r}
