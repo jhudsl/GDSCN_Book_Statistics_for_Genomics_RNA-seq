@@ -12,6 +12,7 @@ about-the-data
 using-geoquery
 geoquery-record-types
 kabuki-dataset-metadata
-recap
+pull-in-counts
+explore-in-isee
 help
 give-us-feedback

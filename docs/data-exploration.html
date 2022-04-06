@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2022-03-22" />
+<meta name="date" content="2022-04-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,7 +159,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="data-exploration.html"><a href="data-exploration.html#using-geoquery"><i class="fa fa-check"></i><b>4.2</b> Using <code>GEOquery</code></a></li>
 <li class="chapter" data-level="4.3" data-path="data-exploration.html"><a href="data-exploration.html#geoquery-record-types"><i class="fa fa-check"></i><b>4.3</b> <code>GEOquery</code> Record Types</a></li>
 <li class="chapter" data-level="4.4" data-path="data-exploration.html"><a href="data-exploration.html#kabuki-dataset-metadata"><i class="fa fa-check"></i><b>4.4</b> Kabuki Dataset Metadata</a></li>
-<li class="chapter" data-level="4.5" data-path="data-exploration.html"><a href="data-exploration.html#recap"><i class="fa fa-check"></i><b>4.5</b> Recap</a></li>
+<li class="chapter" data-level="4.5" data-path="data-exploration.html"><a href="data-exploration.html#pull-in-counts"><i class="fa fa-check"></i><b>4.5</b> Pull in counts</a></li>
+<li class="chapter" data-level="4.6" data-path="data-exploration.html"><a href="data-exploration.html#explore-in-isee"><i class="fa fa-check"></i><b>4.6</b> Explore in iSEE</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>A</b> Help</a></li>
@@ -275,14 +276,62 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## GSM4944269     Nov 25 2020      Aug 31 2021  SRA
 ## GSM4944270     Nov 25 2020      Aug 31 2021  SRA
 ## GSM4944271     Nov 25 2020      Aug 31 2021  SRA</code></pre>
-</div>
-<div id="recap" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Recap</h2>
+<p>The GEO record provides information about each of the samples (aka “metadata”). You can use the <code>table()</code> function to tabulate how many samples there are for each of the three disease states (along with their corresponding wild type controls).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-exploration.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>( pheno_data<span class="sc">$</span><span class="st">`</span><span class="at">disease state:ch1</span><span class="st">`</span> )</span></code></pre></div>
+<pre><code>## 
+##              Kabuki syndrome type 1              Kabuki syndrome type 2 
+##                                   5                                   5 
+##    Rubinstein-Taybi syndrome type 1          Wild-type (Kabuki cohorts) 
+##                                   5                                   5 
+## Wild-type (Rubinstein-Taybi cohort) 
+##                                   7</code></pre>
 <div class="fyi">
-<p>QUESTION:</p>
-<p>Explore the metadata. What was the cell type (<code>cell type:ch1</code>) used in this experiment?</p>
+<p>QUESTIONS:</p>
+<ol style="list-style-type: decimal">
+<li>What was the cell type (<code>cell type:ch1</code>) used in this experiment?</li>
+<li>Which column contains information about the ages?</li>
+<li>Which age has the most samples?</li>
+</ol>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-exploration.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+</div>
+<div id="pull-in-counts" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Pull in counts</h2>
+<p>Retrieving GSE162176 using <code>getGEO()</code> currently does not obtain RNA-seq expression data. We have cached a <code>SummarizedExperiment</code> object in the <a href="https://anvil.terra.bio/#workspaces/gdscn-exercises/datasets">GDSCN datasets</a> Workspace. This object contains metadata, counts, and abundance information as produced by the <a href="https://nf-co.re/rnaseq/3.6">nf-co.re/rnaseq/3.6</a> pipeline using the <a href="https://www.gencodegenes.org/mouse/release_M23.html">GENCODE M23</a> annotation.</p>
+<p><img src="04-data_files/figure-html/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc_g12145d7e666_0_0.png" title="Screenshot of the GDSCN datasets Workspace showing the cached GSE162176.rds dataset." alt="Screenshot of the GDSCN datasets Workspace showing the cached GSE162176.rds dataset." width="480" /></p>
+<p>The Bioconductor <a href="http://bioconductor.org/packages/AnVIL">AnVIL package</a> provides a <code>gsutil_cp()</code> function to streamline transfers between AnVIL Workspaces. Note that the <a href="https://cloud.google.com/storage/docs/gsutil#syntax">syntax for accessing Google Cloud Storage resources</a> is <code>gs://BUCKET_NAME/OBJET_NAME</code>, and that each AnVIL Workspace has an associated bucket. The following command transfers the <code>GSE162176.rds</code> file from the GDSCN datasets Workspace into your Workspace.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-exploration.html#cb10-1" aria-hidden="true" tabindex="-1"></a>AnVIL<span class="sc">::</span><span class="fu">gsutil_cp</span>( <span class="st">&quot;gs://fc-8529d29f-ac62-4c10-9f01-14f4d7612ae0/GSE162176.rds&quot;</span>, <span class="st">&quot;.&quot;</span> )</span></code></pre></div>
+<p>Once you have obtained a copy of the <code>.rds</code> file, load it into your environment using the <code>readRDS()</code> function. Note that you will need to install the <a href="http://bioconductor.org/packages/SummarizedExperiment">SummarizedExperiment</a> package if you have not previously done so.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-exploration.html#cb11-1" aria-hidden="true" tabindex="-1"></a>AnVIL<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;SummarizedExperiment&quot;</span> )</span>
+<span id="cb11-2"><a href="data-exploration.html#cb11-2" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">readRDS</span>( <span class="st">&quot;GSE162176.rds&quot;</span> )</span></code></pre></div>
+<p>Confirm that you have successfully loaded the data by creating a scatterplot comparing a Kabuki sample and a Wild-type sample.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-exploration.html#cb12-1" aria-hidden="true" tabindex="-1"></a>kabuki <span class="ot">&lt;-</span> <span class="fu">assay</span>(se)[,<span class="st">&quot;SRX9584943&quot;</span>]</span>
+<span id="cb12-2"><a href="data-exploration.html#cb12-2" aria-hidden="true" tabindex="-1"></a>wildtype <span class="ot">&lt;-</span> <span class="fu">assay</span>(se)[,<span class="st">&quot;SRX9584958&quot;</span>]</span>
+<span id="cb12-3"><a href="data-exploration.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( <span class="fu">log2</span>(kabuki<span class="sc">+</span><span class="dv">1</span>), <span class="fu">log2</span>(wildtype<span class="sc">+</span><span class="dv">1</span>) )</span></code></pre></div>
+<p><img src="04-data_files/figure-html/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc_g12145d7e666_0_9.png" title="Screenshot of RStudio with an R Notebook that creates a scatterplot comparing kabuki and wildtype log2 counts." alt="Screenshot of RStudio with an R Notebook that creates a scatterplot comparing kabuki and wildtype log2 counts." width="480" /></p>
+<div class="fyi">
+<p>QUESTIONS:</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Which SRX accession numbers correspond to Rubinstein-Taybi?</li>
+<li>Create a scatterplot comparing a Rubinstein-Taybi sample and a Wild-type sample</li>
+</ol>
+</div>
+</div>
+<div id="explore-in-isee" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Explore in iSEE</h2>
+<p>The Bioconductor <a href="https://bioconductor.org/packages/iSEE">Interactive SummarizedExperiment Explorer (iSEE)</a> provides an interactive Shiny-based graphical user interface for exploring data stored in SummarizedExperiment objects and it’s extensions such as SingleCellExperiment. One feature that we will use here is the ability to explore what experimental conditions are present in this dataset and how gene expression changes between conditions.</p>
+<p><img src="04-data_files/figure-html/1Xd-ZdWF-di4RnQAgF5a6J9fW7eIZtH29QYR7Req3Krc_g12145d7e666_0_14.png" title="Screenshot of an iSEE session with three panels: 1) Column data table showing sample metadata, 2) Column data plot showing sample titles vs disease, and 3) Feature assay plot showing gene counts across disease states." alt="Screenshot of an iSEE session with three panels: 1) Column data table showing sample metadata, 2) Column data plot showing sample titles vs disease, and 3) Feature assay plot showing gene counts across disease states." width="480" /></p>
+<p>You can launch an interactive explorer simply by calling the <code>iSEE()</code> function with only a SummarizedExperiment object. However, you can also configure the explorer by passing additional parameters such as the types of panels that you wish to appear. Here we launch iSEE with panels allowing exploration of the sample metadata as a table, the sample metadata as a plot, and the gene expression data as a plot. Note that you will need to install the iSEE package if you have not previously done so.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-exploration.html#cb13-1" aria-hidden="true" tabindex="-1"></a>AnVIL<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;iSEE&quot;</span> )</span>
+<span id="cb13-2"><a href="data-exploration.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( <span class="st">&quot;iSEE&quot;</span> )</span>
+<span id="cb13-3"><a href="data-exploration.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">iSEE</span>( se, <span class="fu">list</span>( <span class="fu">ColumnDataTable</span>(), <span class="fu">ColumnDataPlot</span>(), <span class="fu">FeatureAssayPlot</span>() ) )</span></code></pre></div>
+<div class="fyi">
+<p>QUESTIONS:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>In the “Column data plot” panel, create a plot with age on the y-axis and disease on the x-axis. Which disease states have the most age diversity? The least?</li>
+<li>In the “Feature assay plot” panel, create a plot with ENSMUSG00000000001.4 on the y-axis and disease on the x-axis. What conclusions can you make if you plot counts? Does it change if you plot abundance?</li>
+</ol>
+</div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-exploration.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
 <pre><code>## R version 4.0.2 (2020-06-22)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.3 LTS
