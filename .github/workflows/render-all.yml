@@ -38,6 +38,9 @@ jobs:
     uses: ./.github/workflows/custom-workflow.yml
     with:
       render-type: 'main'
+      repository: $GITHUB_REPOSITORY
+    secrets:
+      gh_pat: ${{ secrets.GH_PAT }}
 
   render-bookdown:
     name: Render bookdown
@@ -48,6 +51,12 @@ jobs:
     if: ${{needs.yaml-check.outputs.toggle_bookdown == 'yes'}}
 
     steps:
+      # Give permission to access the repo
+      - name: safelist repository
+        run: |
+          repo_name='${{ github.event.repository.name }}'
+          git config --global --add safe.directory /__w/$repo_name/$repo_name
+    
       - name: checkout
         uses: actions/checkout@v2
         with:
@@ -99,6 +108,12 @@ jobs:
     if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes' || needs.yaml-check.outputs.toggle_leanpub == 'yes'}}
 
     steps:
+      # Give permission to access the repo
+      - name: safelist repository
+        run: |
+          repo_name='${{ github.event.repository.name }}'
+          git config --global --add safe.directory /__w/$repo_name/$repo_name
+          
       - name: checkout
         uses: actions/checkout@v2
         with:
@@ -201,6 +216,12 @@ jobs:
     if: ${{needs.yaml-check.outputs.toggle_coursera == 'yes'}}
 
     steps:
+      # Give permission to access the repo
+      - name: safelist repository
+        run: |
+          repo_name='${{ github.event.repository.name }}'
+          git config --global --add safe.directory /__w/$repo_name/$repo_name
+    
       - name: checkout
         uses: actions/checkout@v2
         with:
