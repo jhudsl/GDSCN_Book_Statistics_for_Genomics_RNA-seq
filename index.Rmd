@@ -1,5 +1,5 @@
 ---
-title: "GDSCN: Statistics for Genomics - RNAseq"
+title: "Statistics for Genomics: RNAseq"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
