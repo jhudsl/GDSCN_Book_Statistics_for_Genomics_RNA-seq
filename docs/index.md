@@ -1,6 +1,6 @@
 ---
 title: "Statistics for Genomics: RNAseq"
-date: "April 28, 2022"
+date: "August 15, 2022"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: book.bib
@@ -13,7 +13,7 @@ favicon: assets/anvil_favicon.ico
 
 # About this Book {-}
 
-This book is part of a series of books for the Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL) of the National Human Genome Research Institute (NHGRI). Learn more about AnVIL by visiting `https://anvilproject.org` or reading the [preprint](https://www.biorxiv.org/content/10.1101/2021.04.22.436044v1).
+This book is part of a series of books for the Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL) of the National Human Genome Research Institute (NHGRI). Learn more about AnVIL by visiting `https://anvilproject.org` or reading the [article in Cell Genomics](https://www.sciencedirect.com/science/article/pii/S2666979X21001063).
 
 This work is also supported in part by the Genomic Data Science Community Network (GDSCN), a faculty network working toward a vision where researchers, educators, and students from diverse backgrounds are able to fully participate in genomic data science research. We encourage you to check out the GDSCN [preprint](https://arxiv.org/abs/2201.08443).
 
@@ -30,8 +30,36 @@ Please check out our full collection of AnVIL resources below!
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> none </td>
-   <td style="text-align:left;"> none </td>
+   <td style="text-align:left;"> AnVIL: Getting Started </td>
+   <td style="text-align:left;"> https://jhudatascience.org/AnVIL_Book_Getting_Started </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AnVIL: Instructor Guide </td>
+   <td style="text-align:left;"> https://jhudatascience.org/AnVIL_Book_Instructor_Guide </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AnVIL: WDL </td>
+   <td style="text-align:left;"> https://jhudatascience.org/AnVIL_Book_WDL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GDSCN: SARS Galaxy on AnVIL </td>
+   <td style="text-align:left;"> https://jhudatascience.org/GDSCN_Book_SARS_Galaxy_on_AnVIL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GDSCN: Statistics for Genomics Differential Expression </td>
+   <td style="text-align:left;"> https://jhudatascience.org/GDSCN_Book_Statistics_for_Genomics_Differential_Expression </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GDSCN: Statistics for Genomics PCA </td>
+   <td style="text-align:left;"> https://jhudatascience.org/GDSCN_Book_Statistics_for_Genomics_PCA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GDSCN: Statistics for Genomics RNA-seq </td>
+   <td style="text-align:left;"> https://jhudatascience.org/GDSCN_Book_Statistics_for_Genomics_RNA-seq </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GDSCN: Statistics for Genomics SCRNA-seq </td>
+   <td style="text-align:left;"> https://jhudatascience.org/GDSCN_Book_Statistics_for_Genomics_SCRNA-seq </td>
   </tr>
 </tbody>
 </table>
