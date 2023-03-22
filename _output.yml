@@ -1,17 +1,19 @@
 bookdown::gitbook:
-  css: assets/style_anvil.css
+  # When using multiple css files, the default file path will be the first one #
+  css: [assets/style.css, assets/GDSCN_style/gdscn.css]
   includes:
-    before_body: assets/big-image_anvil.html
-    after_body: assets/footer.html
+    before_body: assets/GDSCN_style/big-image_gdscn.html
+    after_body: assets/GDSCN_style/footer.html
   highlight: tango
   config:
     toc:
       collapse: section
+      edit: https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq/edit/main/%s
       before: |
-       <a href="https://anvilproject.org/" target="_blank"><img src="assets/logo-anvil.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
+       <a href="https://www.gdscn.org/" target="_blank"><img src="assets/GDSCN_style/logo-gdscn.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
       after: |
-       <p style="text-align:center;"> <a href="https://github.com/jhudsl/DaSL_Course_Template_Bookdown" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
-       <p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
-       <a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+       <p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+       <p style="text-align:center;"> <a href="https://hutchdatascience.org/"> The Fred Hutch Data Science Lab </a></p>
+       <a href="https://hutchdatascience.org/" target="_blank"><img src="https://raw.githubusercontent.com/jhudsl/OTTR_Template/main/style-sets/fhdasl/copy_to_assets/big-dasl-stacked.png" style="width: 80%; padding-left: 34px; padding-top: 8px;"</a>
        <p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
-    edit: https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq/edit/main/%s
+       <p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/AK12iVXTjsB7yCUUA"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>

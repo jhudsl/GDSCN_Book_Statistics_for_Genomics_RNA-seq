@@ -1,23 +1,41 @@
 ---
 title: "GDSCN: Course Name "
-date: "`r format(Sys.time(), '%B, %Y')`"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: book.bib
 biblio-style: apalike
 link-citations: yes
 description: "Description about Course/Book."
-favicon: assets/gdscn_favicon.ico
+favicon: assets/GDSCN_style/gdscn_favicon.ico
 ---
-
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), "bookdown", "knitr", "rmarkdown"
-), "packages.bib")
-```
 
 # About this Course {-}
 
-This course is part of a series of courses for the [The Genomic Data Science Community Network (GDSCN)](https://www.gdscn.org/home) is a group of educators gathered with the aim to bring genomic data science education to students at diverse institutions. 
+<!-- Course description -->
+
+## Skills Level {-} 
+
+::: {.notice}
+_Genetics_
+<!-- **Novice**: no genetics knowledge needed -->
+
+_Programming skills_
+<!-- **Novice**: no programming experience needed -->
+:::
+
+## Learning Objectives {-}
+
+<!-- Learning objectives for this activity come from the [Genetics Core Competencies](https://genetics-gsa.org/education/genetics-learning-framework/): -->
+
+<!-- - Objective 1 -->
+<!-- - Objective 2 -->
+<!-- - Objective 3 -->
+
+<!-- Please also see the Bioinformatics core competencies for undergraduate life sciences education from NIBLSE: https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0196878.t002 -->
+
+## GDSCN Collection {-}
+
+This exercise is part of a collection of teaching resources developed through the *Genomic Data Science Community Network* (GDSCN). GDSCN works towards a vision where researchers, educators, and students from diverse backgrounds are able to fully participate in genomic data science research.  Learn more about GDSCN by visiting https://www.gdscn.org/home or reading the [article in Genome Research](https://doi.org/10.1101/gr.276496.121).
+
+Please check out our full collection of AnVIL and related resources: https://hutchdatascience.org/AnVIL_Collection/

@@ -1,0 +1,99 @@
+
+/* GDSCN style */
+/* Change colors to match GDSCN logo */
+/* Things below this comment are GDSCN customizations */
+
+.hero-image-container {
+  height: 100px;
+}
+
+.page-inner {
+  padding-top: 60px !important;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h1,
+.book .book-body .page-wrapper .page-inner section.normal h2,
+.book .book-body .page-wrapper .page-inner section.normal h3,
+.book .book-body .page-wrapper .page-inner section.normal h4,
+.book .book-body .page-wrapper .page-inner section.normal h5,
+.book .book-body .page-wrapper .page-inner section.normal h6 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+:root {
+  --highlight-txt-color: #73b263;
+  --main-txt-color: #274731;
+}
+
+.trapezoid {
+  width: 132px;
+  text-align: center;
+  position: relative;
+    left: 10px;
+  border-right: 50px solid --main-txt-color;
+  border-bottom: 50px solid #dbdbdb;
+  border-left: 50px solid --main-txt-color;
+  box-sizing: content-box;
+}
+.trapezoid span {
+  position: absolute;
+  top: 8px;
+  bottom: 5px;
+  left: 5%;
+  color: #dbdbdb;
+}
+
+/* Module chunk shading --------------------------------------------*/
+div.borrowed_chunk {
+  padding: 1em;
+  margin: 1em 0;
+  min-height: 120px;
+  background-repeat: no-repeat;
+  background-color: #eff7fe;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+  color: var(--highlight-txt-color);
+}
+
+.title {
+  color: var(--main-txt-color);
+}
+
+.section.level1 > p:first-of-type:first-letter { /*drop cap for first p beneath level 1 headers only within class .section*/
+  color: var(--main-txt-color);
+}
+
+.book .book-summary a {
+  color: var(--main-txt-color);
+}
+
+/* all TOC list items, basically */
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+  color: var(--main-txt-color);
+}
+
+.summary a:hover {
+  color: var(--highlight-txt-color) !important;
+}
+
+.book .book-summary ul.summary li.active>a { /*active TOC links*/
+  color: var(--highlight-txt-color) !important;
+  border-color: var(--highlight-txt-color);
+}
+
+.trapezoid {
+  border-right: 50px solid var(--main-txt-color);
+  border-left: 50px solid var(--main-txt-color);
+}
+
+div.notice, div.dictionary, div.reflection {
+  border: 4px var(--highlight-txt-color);
+  border-style: solid;
+}
+
+.footer {
+  color: var(--main-txt-color);
+}
