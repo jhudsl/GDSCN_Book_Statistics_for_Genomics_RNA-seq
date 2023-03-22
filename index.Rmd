@@ -10,28 +10,22 @@ description: Description about Course/Book.
 favicon: assets/anvil_favicon.ico
 ---
 
-
 # About this Book {-}
 
-This book is part of a series of books for the Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL) of the National Human Genome Research Institute (NHGRI). Learn more about AnVIL by visiting `https://anvilproject.org` or reading the [article in Cell Genomics](https://www.sciencedirect.com/science/article/pii/S2666979X21001063).
+This book is intended to introduce concepts in RNA-seq analysis.
 
-This work is also supported in part by the Genomic Data Science Community Network (GDSCN), a faculty network working toward a vision where researchers, educators, and students from diverse backgrounds are able to fully participate in genomic data science research. We encourage you to check out the GDSCN [preprint](https://arxiv.org/abs/2201.08443).
+## Skills Level {-} 
 
-## AnVIL Collection {-}
+::: {.notice}
+_Genetics_
+<!-- **Intermediate**: some genetics knowledge needed -->
 
-Please check out our full collection of AnVIL resources below!
+_Programming skills_
+<!-- **Beginner**: some programming experience helpful -->
+:::
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-source("scripts/anvil_repo_table.R")
+## GDSCN Collection {-}
 
-# Add below any repositories that should not be added
-exclude = c(
-  "anvil-intro",
-  "AnVIL_Template",
-  "AnVIL_Template_Test",
-  "GDSCN_bookdown_style"
-)
+This exercise is part of a collection of teaching resources developed through the *Genomic Data Science Community Network* (GDSCN). GDSCN works towards a vision where researchers, educators, and students from diverse backgrounds are able to fully participate in genomic data science research.  Learn more about GDSCN by visiting https://www.gdscn.org/home or reading the [article in Genome Research](https://doi.org/10.1101/gr.276496.121).
 
-# Create table for AnVIL repos detected through the API
-knitr::kable(make_anvil_repo_table(exclude), format = "html")
-```
+Please check out our full collection of AnVIL and related resources: https://hutchdatascience.org/AnVIL_Collection/
