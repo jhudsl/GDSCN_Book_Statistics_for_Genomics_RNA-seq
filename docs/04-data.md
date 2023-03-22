@@ -209,7 +209,7 @@ sessionInfo()
 ```
 ## R version 4.1.3 (2022-03-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 20.04.4 LTS
+## Running under: Ubuntu 20.04.5 LTS
 ## 
 ## Matrix products: default
 ## BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3
@@ -232,7 +232,7 @@ sessionInfo()
 ## loaded via a namespace (and not attached):
 ##  [1] bslib_0.3.1         compiler_4.1.3      pillar_1.7.0       
 ##  [4] BiocManager_1.30.16 jquerylib_0.1.4     highr_0.9          
-##  [7] R.methodsS3_1.8.1   R.utils_2.11.0      tools_4.1.3        
+##  [7] R.methodsS3_1.8.1   R.utils_2.12.2      tools_4.1.3        
 ## [10] digest_0.6.29       jsonlite_1.8.0      evaluate_0.15      
 ## [13] lifecycle_1.0.1     tibble_3.1.6        pkgconfig_2.0.3    
 ## [16] png_0.1-7           rlang_1.0.2         DBI_1.1.2          

@@ -33,19 +33,19 @@ These credits are based on our [course contributors table guidelines](https://gi
 ## ─ Session info ───────────────────────────────────────────────────────────────
 ##  setting  value
 ##  version  R version 4.1.3 (2022-03-10)
-##  os       Ubuntu 20.04.4 LTS
+##  os       Ubuntu 20.04.5 LTS
 ##  system   x86_64, linux-gnu
 ##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       Etc/UTC
-##  date     2022-08-15
-##  pandoc   2.14.1 @ /usr/lib/rstudio-server/bin/ (via rmarkdown)
+##  date     2023-03-22
+##  pandoc   2.17.1.1 @ /usr/local/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version    date (UTC) lib source
-##  bookdown      0.24       2022-04-26 [1] Github (rstudio/bookdown@88bc4ea)
+##  bookdown      0.24       2023-03-22 [1] Github (rstudio/bookdown@88bc4ea)
 ##  bslib         0.3.1      2021-10-06 [1] RSPM (R 4.1.0)
 ##  cachem        1.0.6      2021-08-19 [1] RSPM (R 4.1.0)
 ##  callr         3.7.0      2021-04-20 [1] RSPM (R 4.1.0)
@@ -62,7 +62,7 @@ These credits are based on our [course contributors table guidelines](https://gi
 ##  htmltools     0.5.2      2021-08-25 [1] RSPM (R 4.1.0)
 ##  jquerylib     0.1.4      2021-04-26 [1] RSPM (R 4.1.0)
 ##  jsonlite      1.8.0      2022-02-22 [1] RSPM (R 4.1.0)
-##  knitr         1.33       2022-04-26 [1] Github (yihui/knitr@a1052d1)
+##  knitr         1.33       2023-03-22 [1] Github (yihui/knitr@a1052d1)
 ##  lifecycle     1.0.1      2021-09-24 [1] RSPM (R 4.1.0)
 ##  magrittr      2.0.3      2022-03-30 [1] RSPM (R 4.1.0)
 ##  memoise       2.0.1      2021-11-26 [1] RSPM (R 4.1.0)
@@ -74,17 +74,17 @@ These credits are based on our [course contributors table guidelines](https://gi
 ##  purrr         0.3.4      2020-04-17 [1] RSPM (R 4.1.0)
 ##  R6            2.5.1      2021-08-19 [1] RSPM (R 4.1.0)
 ##  remotes       2.4.2      2021-11-30 [1] RSPM (R 4.1.0)
-##  rlang         1.0.2      2022-04-26 [1] Github (r-lib/rlang@34b04a8)
-##  rmarkdown     2.10       2022-04-26 [1] Github (rstudio/rmarkdown@02d3c25)
+##  rlang         1.0.2      2023-03-22 [1] Github (r-lib/rlang@34b04a8)
+##  rmarkdown     2.10       2023-03-22 [1] Github (rstudio/rmarkdown@02d3c25)
 ##  rprojroot     2.0.3      2022-04-02 [1] CRAN (R 4.1.3)
 ##  sass          0.4.1      2022-03-23 [1] RSPM (R 4.1.0)
 ##  sessioninfo   1.2.2      2021-12-06 [1] RSPM (R 4.1.0)
 ##  stringi       1.7.6      2021-11-29 [1] RSPM (R 4.1.0)
 ##  stringr       1.4.0      2019-02-10 [1] RSPM (R 4.1.0)
-##  testthat      3.0.1      2022-04-26 [1] Github (R-lib/testthat@e99155a)
-##  usethis       2.1.5.9000 2022-04-26 [1] Github (r-lib/usethis@3a7f697)
+##  testthat      3.0.1      2023-03-22 [1] Github (R-lib/testthat@e99155a)
+##  usethis       2.1.6.9000 2023-03-22 [1] Github (r-lib/usethis@b4b8623)
 ##  withr         2.5.0      2022-03-03 [1] RSPM (R 4.1.0)
-##  xfun          0.26       2022-04-26 [1] Github (yihui/xfun@74c2a66)
+##  xfun          0.26       2023-03-22 [1] Github (yihui/xfun@74c2a66)
 ##  yaml          2.3.5      2022-02-21 [1] RSPM (R 4.1.0)
 ## 
 ##  [1] /usr/local/lib/R/site-library
