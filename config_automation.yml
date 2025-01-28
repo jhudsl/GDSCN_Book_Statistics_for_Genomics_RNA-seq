@@ -3,22 +3,34 @@
 # Check quiz formatting
 check-quizzes: no
 # Check that urls in the content are not broken
-url-checker: no
+url-checker: yes
 # Render preview of content with changes (Rmd's and md's are checked)
 render-preview: yes
 # Spell check Rmds and quizzes
 spell-check: yes
 # Style any R code
 style-code: yes
+# Would you like your markdown files to be checked for formatting
+markdown-linter: yes
+# Would you like a readability report on your markdowns?
+readability-report: yes
 # Test build the docker image if any docker-relevant files have been changed
 docker-test: no
+# Should URLs be tested periodically?
+url-check-periodically: yes
 
 ##### Renderings run upon merge to main branch #####
 # Rendering each platform's content
-render-bookdown: yes
+render-website: rmd
 render-leanpub: no
 render-coursera: no
 
+##### Rendering of student guide (if applicable)
+render-student-guide: yes
+
+##### Auto-generate a feedback link for the AnVIL Feedback Form: https://docs.google.com/forms/d/e/1FAIpQLScrDVb_utm55pmb_SHx-RgELTEbCCWdLea0T3IzS0Oj00GE4w/viewform
+feedback-link: yes
+
 # What docker image should be used for rendering?
-# The default is jhudsl/course_template:main
-rendering-docker-image: 'jhudsl/stats-for-genomics:main'
+# The default is jhudsl/base_ottr:main
+rendering-docker-image: 'jhudsl/base_ottr:main'
