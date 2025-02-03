@@ -26,11 +26,11 @@ render-leanpub: no
 render-coursera: no
 
 ##### Rendering of student guide (if applicable)
-render-student-guide: yes
+render-student-guide: no
 
 ##### Auto-generate a feedback link for the AnVIL Feedback Form: https://docs.google.com/forms/d/e/1FAIpQLScrDVb_utm55pmb_SHx-RgELTEbCCWdLea0T3IzS0Oj00GE4w/viewform
 feedback-link: yes
 
 # What docker image should be used for rendering?
 # The default is jhudsl/base_ottr:main
-rendering-docker-image: 'jhudsl/base_ottr:main'
+rendering-docker-image: 'jhudsl/stats-for-genomics:main'
