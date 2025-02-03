@@ -1,6 +1,6 @@
 ---
 title: "Statistics for Genomics: RNAseq"
-date: "March 22, 2023"
+date: "February 03, 2025"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: book.bib
@@ -29,3 +29,4 @@ _Programming skills_
 This exercise is part of a collection of teaching resources developed through the *Genomic Data Science Community Network* (GDSCN). GDSCN works towards a vision where researchers, educators, and students from diverse backgrounds are able to fully participate in genomic data science research.  Learn more about GDSCN by visiting https://www.gdscn.org/home or reading the [article in Genome Research](https://doi.org/10.1101/gr.276496.121).
 
 Please check out our full collection of AnVIL and related resources: https://hutchdatascience.org/AnVIL_Collection/
+
