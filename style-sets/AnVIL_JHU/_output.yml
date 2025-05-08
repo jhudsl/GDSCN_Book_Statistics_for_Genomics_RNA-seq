@@ -2,6 +2,7 @@ bookdown::gitbook:
   # When using multiple css files, the default file path will be the first one #
   css: [assets/style.css, assets/AnVIL_style/anvil.css]
   includes:
+    in_header: GA_Script.html
     before_body: assets/AnVIL_style/big-image_anvil.html
     after_body: assets/AnVIL_style/footer.html
   highlight: tango

@@ -1,0 +1,20 @@
+
+# Student Guide
+
+## Activity One
+
+Many of the AnVIL books that are designed for teaching a class or workshop contain information aimed at the instructor.
+
+You might want to create a "student guide" that contains a different subset of Rmd files from your book, or renders to a different output format (e.g. word document). You can specify the output and Rmd files that will be used for the student guide using the `_output.yml` and `_bookdown.yml` files in the `student-guide` directory.
+
+By default, repositories based on `AnVIL_Template` create a docx file containing this chapter as an example. Once you have adjusted `student-guide/bookdown.yml` to include the chapters you want in your student guide, you can link to it by replacing `{repo-name}` in the following URL:
+
+`https://github.com/jhudsl/{repo-name}/raw/main/student-guide/docs/Student_Guide.docx`
+
+When someone clicks this link, they will download the docx file. For example, here is the link for the student guide from `AnVIL_Template`:
+
+https://github.com/jhudsl/AnVIL_Template/raw/main/student-guide/docs/Student_Guide.docx
+
+## Activity Two
+
+Steps of the guide could go here.

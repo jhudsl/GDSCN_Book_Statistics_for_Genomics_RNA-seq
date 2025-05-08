@@ -1,8 +1,8 @@
-book_filename: "Student_Guide"
 chapter_name: "Chapter "
-repo: https://github.com/jhudsl/AnVIL_Template/
+repo: https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq/
 rmd_files: ["index.Rmd",
-            "09-student_guide.Rmd",
+            "student-guide.Rmd",
+            "About.Rmd",
             "References.Rmd"]
 new_session: yes
 bibliography: [book.bib]
@@ -10,4 +10,5 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter"
-output_dir: "student-guide"
+book_filename: "Student_Guide" # Do not change
+output_dir: "student-guide/docs" # Do not change

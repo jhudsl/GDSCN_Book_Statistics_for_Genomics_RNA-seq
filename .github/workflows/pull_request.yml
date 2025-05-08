@@ -249,9 +249,8 @@ jobs:
       - name: Build components of the comment
         id: build-components
         run: |
-          course_name=$(head -n 1 student-guide/_bookdown.yml | cut -d'"' -f 2| tr " " "-")
           bookdown_link=$(echo "https://htmlpreview.github.io/?https://raw.githubusercontent.com/$GITHUB_REPOSITORY/preview-${{ github.event.pull_request.number }}/docs/index.html")
-          student_guide=$(echo "https://github.com/$GITHUB_REPOSITORY/raw/preview-${{ github.event.pull_request.number }}/student-guide/Student_Guide.docx")
+          student_guide=$(echo "https://github.com/$GITHUB_REPOSITORY/raw/preview-${{ github.event.pull_request.number }}/student-guide/docs/Student_Guide.docx")
           zip_link=$(echo "https://github.com/$GITHUB_REPOSITORY/raw/preview-${{ github.event.pull_request.number }}/website-preview.zip")
           echo "zip_link=$zip_link" >> $GITHUB_OUTPUT
           echo "bookdown_link=$bookdown_link" >> $GITHUB_OUTPUT

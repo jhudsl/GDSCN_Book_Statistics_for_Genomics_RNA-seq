@@ -31,6 +31,7 @@ jobs:
       toggle_website: "${{ env.RENDER_WEBSITE }}"
       toggle_coursera: "${{ env.RENDER_COURSERA }}"
       toggle_leanpub: "${{ env.RENDER_LEANPUB }}"
+      make_book_txt: "${{ env.MAKE_BOOK_TXT }}"
       toggle_feedback_link: "${{ env.FEEDBACK_LINK }}"
       toggle_student_guide: "${{ env.RENDER_STUDENT_GUIDE }}"
       rendering_docker_image: "${{ env.RENDERING_DOCKER_IMAGE }}"
