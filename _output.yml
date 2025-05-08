@@ -9,6 +9,7 @@ bookdown::gitbook:
   config:
     toc:
       collapse: section
+      edit: https://github.com/jhudsl/GDSCN_Book_Statistics_for_Genomics_RNA-seq/edit/main/%s
       before: |
        <a href="https://www.gdscn.org/" target="_blank"><img src="assets/GDSCN_style/logo-gdscn.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
       after: |
