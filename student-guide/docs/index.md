@@ -1,6 +1,6 @@
 ---
 title: "Statistics for Genomics: RNAseq"
-date: "May 08, 2025"
+date: "November 12, 2025"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: book.bib
